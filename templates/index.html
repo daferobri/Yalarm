@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Notification.requestPermission().then(function(permission) {
+                if (permission === 'granted') {
+                    console.log('Notification permission granted.');
+                } else {
+                    console.log('Notification permission denied.');
+                }
+            });
+            let alarmsList = JSON.parse("{{ alarmsList | tojson | safe }}");
+            let audio = new Audio('/static/alarm.wav');
+            audio.loop = true;
+            setInterval(function() {
+                let now = new Date();
+                let currentTime = now.getHours() * 3600 + now.getMinutes() * 60;
+                if (alarmsList.includes(currentTime)) {
+                    new Notification('Wake up!');
+                    audio.play();
+                }
+            }, 60000);
+            document.getElementById('stop').addEventListener('click', function() {
+                audio.pause();
+                audio.currentTime = 0;
+            })
+        });
+    </script>
+    <button type="button" class="btn btn-primary btn-lg" id="stop">Stop Alarm</button>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th class="text-start">Hour</th>
+                <th class="text-start">Minute</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alarm in alarms %}
+                <tr>
+                    <td>{{ alarm.hour }}</td>
+                    <td>{{ alarm.minute }}</td>
+                </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+{% endblock %}

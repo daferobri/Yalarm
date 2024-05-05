@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Alarm
+{% endblock %}
+
+{% block main %}
+    <form action="/delete" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="alarm">
+                <option disabled="" selected="">Alarm</option>
+                {% for alarm in alarms %}
+                    <option value="{{ alarm.id }}">{{ alarm.hour }}:{{ alarm.minute }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Delete</button>
+    </form>
+{% endblock %}

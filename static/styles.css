@@ -1,0 +1,19 @@
+/* Size for brand */
+nav .navbar-brand {
+
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #00356b;
+}
+
+.btn {
+    background-color: #00356b;
+}
+
+.dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+}

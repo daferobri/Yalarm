@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New Alarm
+{% endblock %}
+
+{% block main %}
+    <form action="/newalarm" method="post">
+        <script src="/static/dropdown.js"></script>
+        <div class="container g-0 text-center" style="width: 20%; font-size: xx-large;">
+            <div class="row">
+                <input autocomplete="off" class="form-control mx-auto" id="hour" name="hour" placeholder="00" style="width: 50px" type="text" value="00" readonly>
+                :
+                <input autocomplete="off" class="form-control mx-auto" id="minute" name="minute" placeholder="00" style="width: 50px" type="text" value="00" readonly>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Hour
+            </button>
+            <ul class="dropdown-menu" id="hourDropdown">
+                <li><a class="dropdown-item" href="#">0</a></li>
+                <li><a class="dropdown-item" href="#">1</a></li>
+                <li><a class="dropdown-item" href="#">2</a></li>
+                <li><a class="dropdown-item" href="#">3</a></li>
+                <li><a class="dropdown-item" href="#">4</a></li>
+                <li><a class="dropdown-item" href="#">5</a></li>
+                <li><a class="dropdown-item" href="#">6</a></li>
+                <li><a class="dropdown-item" href="#">7</a></li>
+                <li><a class="dropdown-item" href="#">8</a></li>
+                <li><a class="dropdown-item" href="#">9</a></li>
+                <li><a class="dropdown-item" href="#">10</a></li>
+                <li><a class="dropdown-item" href="#">11</a></li>
+                <li><a class="dropdown-item" href="#">12</a></li>
+                <li><a class="dropdown-item" href="#">13</a></li>
+                <li><a class="dropdown-item" href="#">14</a></li>
+                <li><a class="dropdown-item" href="#">15</a></li>
+                <li><a class="dropdown-item" href="#">16</a></li>
+                <li><a class="dropdown-item" href="#">17</a></li>
+                <li><a class="dropdown-item" href="#">18</a></li>
+                <li><a class="dropdown-item" href="#">19</a></li>
+                <li><a class="dropdown-item" href="#">20</a></li>
+                <li><a class="dropdown-item" href="#">21</a></li>
+                <li><a class="dropdown-item" href="#">22</a></li>
+                <li><a class="dropdown-item" href="#">23</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Minute
+            </button>
+            <ul class="dropdown-menu" id="minuteDropdown">
+                <li><a class="dropdown-item" href="#"> 00 </a></li>
+                <li><a class="dropdown-item" href="#"> 01 </a></li>
+                <li><a class="dropdown-item" href="#"> 02 </a></li>
+                <li><a class="dropdown-item" href="#"> 03 </a></li>
+                <li><a class="dropdown-item" href="#"> 04 </a></li>
+                <li><a class="dropdown-item" href="#"> 05 </a></li>
+                <li><a class="dropdown-item" href="#"> 06 </a></li>
+                <li><a class="dropdown-item" href="#"> 07 </a></li>
+                <li><a class="dropdown-item" href="#"> 08 </a></li>
+                <li><a class="dropdown-item" href="#"> 09 </a></li>
+                <li><a class="dropdown-item" href="#"> 10 </a></li>
+                <li><a class="dropdown-item" href="#"> 11 </a></li>
+                <li><a class="dropdown-item" href="#"> 12 </a></li>
+                <li><a class="dropdown-item" href="#"> 13 </a></li>
+                <li><a class="dropdown-item" href="#"> 14 </a></li>
+                <li><a class="dropdown-item" href="#"> 15 </a></li>
+                <li><a class="dropdown-item" href="#"> 16 </a></li>
+                <li><a class="dropdown-item" href="#"> 17 </a></li>
+                <li><a class="dropdown-item" href="#"> 18 </a></li>
+                <li><a class="dropdown-item" href="#"> 19 </a></li>
+                <li><a class="dropdown-item" href="#"> 20 </a></li>
+                <li><a class="dropdown-item" href="#"> 21 </a></li>
+                <li><a class="dropdown-item" href="#"> 22 </a></li>
+                <li><a class="dropdown-item" href="#"> 23 </a></li>
+                <li><a class="dropdown-item" href="#"> 24 </a></li>
+                <li><a class="dropdown-item" href="#"> 25 </a></li>
+                <li><a class="dropdown-item" href="#"> 26 </a></li>
+                <li><a class="dropdown-item" href="#"> 27 </a></li>
+                <li><a class="dropdown-item" href="#"> 28 </a></li>
+                <li><a class="dropdown-item" href="#"> 29 </a></li>
+                <li><a class="dropdown-item" href="#"> 30 </a></li>
+                <li><a class="dropdown-item" href="#"> 31 </a></li>
+                <li><a class="dropdown-item" href="#"> 32 </a></li>
+                <li><a class="dropdown-item" href="#"> 33 </a></li>
+                <li><a class="dropdown-item" href="#"> 34 </a></li>
+                <li><a class="dropdown-item" href="#"> 35 </a></li>
+                <li><a class="dropdown-item" href="#"> 36 </a></li>
+                <li><a class="dropdown-item" href="#"> 37 </a></li>
+                <li><a class="dropdown-item" href="#"> 38 </a></li>
+                <li><a class="dropdown-item" href="#"> 39 </a></li>
+                <li><a class="dropdown-item" href="#"> 40 </a></li>
+                <li><a class="dropdown-item" href="#"> 41 </a></li>
+                <li><a class="dropdown-item" href="#"> 42 </a></li>
+                <li><a class="dropdown-item" href="#"> 43 </a></li>
+                <li><a class="dropdown-item" href="#"> 44 </a></li>
+                <li><a class="dropdown-item" href="#"> 45 </a></li>
+                <li><a class="dropdown-item" href="#"> 46 </a></li>
+                <li><a class="dropdown-item" href="#"> 47 </a></li>
+                <li><a class="dropdown-item" href="#"> 48 </a></li>
+                <li><a class="dropdown-item" href="#"> 49 </a></li>
+                <li><a class="dropdown-item" href="#"> 50 </a></li>
+                <li><a class="dropdown-item" href="#"> 51 </a></li>
+                <li><a class="dropdown-item" href="#"> 52 </a></li>
+                <li><a class="dropdown-item" href="#"> 53 </a></li>
+                <li><a class="dropdown-item" href="#"> 54 </a></li>
+                <li><a class="dropdown-item" href="#"> 55 </a></li>
+                <li><a class="dropdown-item" href="#"> 56 </a></li>
+                <li><a class="dropdown-item" href="#"> 57 </a></li>
+                <li><a class="dropdown-item" href="#"> 58 </a></li>
+                <li><a class="dropdown-item" href="#"> 59 </a></li>
+            </ul>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-lg" style="margin-top: 50px;">New Alarm</button>
+        </div>
+    </form>
+
+{% endblock %}
